@@ -2,6 +2,8 @@ package com.pucoexamen.pruebaparcial2carlos.Service;
 
 import java.util.Optional;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.pucoexamen.pruebaparcial2carlos.Model.Turno;
 import com.pucoexamen.pruebaparcial2carlos.Repository.TurnoRepository;
 
@@ -28,5 +30,17 @@ public class TurnoSetvice {
         }
 
     }
+
+
+    @Transactional
+	public void updateTurno(Turno turno) {
+		Turno turnoEntity = this.turnoRepository.findAll().iterator().next();
+		turnoEntity.setFechaHoraFinAtencion(turno.getFechaHoraFinAtencion());
+		turnoEntity.setFechaHoraGeneracion(turno.getFechaHoraGeneracion());
+        turnoEntity.setFechaHoraFinAtencion(turno.getFechaHoraInicioAtencion());
+        turnoEntity.setCalificacion(turno.getCalificacion());
+		this.turnoRepository.save(turnoEntity);
+
+	}
 
 }

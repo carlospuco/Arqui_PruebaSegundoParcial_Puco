@@ -23,7 +23,6 @@ public class TurnoController {
         this.turnoService = turnoService;
     }
 
-
     @ResponseBody
     @RequestMapping(value = "/all", method = RequestMethod.POST)
     public ResponseEntity<String> saveAssociatedService(@RequestBody Turno turno) {
@@ -34,5 +33,18 @@ public class TurnoController {
             return ResponseEntity.internalServerError().build();
         }
     }
+
+
+    @RequestMapping(value = "", method = RequestMethod.PUT)
+	public ResponseEntity<String> updateTurno(@RequestBody Turno turnoEntity) {
+		this.turnoService.updateTurno(turnoEntity);
+		return ResponseEntity.ok("Informacion del turno fue actulizada correctamente");
+	}
+
+
+
+
+
+
 
 }
