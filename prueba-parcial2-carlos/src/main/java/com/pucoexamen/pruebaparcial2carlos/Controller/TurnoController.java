@@ -34,7 +34,6 @@ public class TurnoController {
         }
     }
 
-
     @RequestMapping(value = "", method = RequestMethod.PUT)
 	public ResponseEntity<String> updateTurno(@RequestBody Turno turnoEntity) {
 		this.turnoService.updateTurno(turnoEntity);
