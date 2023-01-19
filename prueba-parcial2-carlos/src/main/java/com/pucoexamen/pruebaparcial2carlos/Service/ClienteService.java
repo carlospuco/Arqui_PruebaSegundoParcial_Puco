@@ -1,38 +1,30 @@
 package com.pucoexamen.pruebaparcial2carlos.Service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
-import com.pucoexamen.pruebaparcial2carlos.Model.User;
-import com.pucoexamen.pruebaparcial2carlos.Repository.UserRepository;
+import com.pucoexamen.pruebaparcial2carlos.Model.Cliente;
+import com.pucoexamen.pruebaparcial2carlos.Repository.ClienteRepository;
 
 
 
 @Service
-public class UserService {
+public class ClienteService {
 
-    private final UserRepository userRepository;
+    private final ClienteRepository userRepository;
 
-    public UserService(UserRepository userRepository) {
+    
+    public ClienteService(ClienteRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public Iterable<User> getAllUsers() {
+    public List<Cliente> getAllClientes() {
         return userRepository.findAll();
     }
 
-    public User getUserById(String id) {
-        return userRepository.findById(id).orElse(null);
+    public List<Cliente> findAll() {
+        return null;
     }
 
-    public User createUser(User user) {
-        return userRepository.save(user);
-    }
-
-    public User updateUser(User user) {
-        return userRepository.save(user);
-    }
-
-    public void deleteUser(String id) {
-        userRepository.deleteById(id);
-    }
 }

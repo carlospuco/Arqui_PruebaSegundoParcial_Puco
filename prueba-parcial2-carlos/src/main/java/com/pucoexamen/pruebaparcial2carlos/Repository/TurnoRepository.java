@@ -10,7 +10,7 @@ import com.pucoexamen.pruebaparcial2carlos.Model.Turno;
 public interface TurnoRepository extends CrudRepository<Turno, String>{
     
 
-    List<Turno> findByCedulaCliente(String cedulaCliente);
+    Turno findByCedulaClienteNombreandClienteCedula(String cedulaCliente, String nombreCliente);
     List<Turno> findByNombreCliente(String nombreCliente);
     List<Turno> generateNextTurno (String  numeroCuenta);
     List<Turno> findByCalificacion (BigDecimal calificaion);

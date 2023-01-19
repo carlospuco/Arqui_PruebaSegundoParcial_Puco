@@ -1,7 +1,10 @@
 package com.pucoexamen.pruebaparcial2carlos.Model;
 
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
+import org.apache.el.lang.ELArithmetic.BigDecimalDelegate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
@@ -27,7 +30,7 @@ public class Cliente {
     private String apellidos;
     private Date fechaNacimiento;
     private String direccionPrincipal;
-    private Number telefono;
+    private BigDecimal telefono;
     private String email;
     
     /*
@@ -36,6 +39,8 @@ public class Cliente {
      * private List<ClientPhone> phone;
      * private List<ClientAddress> address;
      */
+
+     private List<Turno> turno;
     @Version
     private Number version;
 }
